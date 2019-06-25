@@ -12,10 +12,19 @@ const cssPlugin = new MiniCssExtractPlugin({
     chunkFilename: '[name].css',
 });
 
+const getConfigBasedOnEnv = () => {
+    switch (process.env.NODE_ENV) {
+        case 'dev':
+            return path.join(__dirname, '/../app/config/dev.js');
+        case 'prod':
+            return path.join(__dirname, '/../app/config/prod.js');
+    }
+};
+
 module.exports = {
     entry: ['./src/'],
     output: {
-        path: path.join(__dirname, './dist'),
+        path: path.join(__dirname, './../dist'),
         publicPath: '/',
         filename: 'bundle.[hash].js',
     },
@@ -44,5 +53,8 @@ module.exports = {
     plugins: [htmlPlugin, cssPlugin],
     resolve: {
         extensions: ['.js', '.css', '.scss'],
+        alias: {
+            appConfig: getConfigBasedOnEnv(),
+        },
     },
 };
