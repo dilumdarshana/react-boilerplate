@@ -1,5 +1,5 @@
-export class Util {
+export default class Util {
     static hello() {
         return 'Helloow!';
     }
-};
+}

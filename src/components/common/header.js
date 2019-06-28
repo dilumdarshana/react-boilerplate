@@ -1,9 +1,5 @@
 import React from 'react';
 
-const headerComponent = () => {
-    return (
-        <p>Header</p>
-    );
-};
+const headerComponent = () => <p>Header</p>;
 
 export default headerComponent;

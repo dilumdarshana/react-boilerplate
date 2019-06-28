@@ -13,6 +13,7 @@
         "start": "webpack-dev-server --config ./webpack/webpack.dev.config.js",
         "build": "cross-env NODE_ENV=dev rimraf dist && webpack --colors --display-error-details --config ./webpack/webpack.dev.config.js",
         "lint": "eslint .",
+        "lint-fix": "eslint . --fix",
         "pretty": "prettier --write --tab-width 4 \"src/**/*.js\"",
         "precommit": "lint-staged"
     },

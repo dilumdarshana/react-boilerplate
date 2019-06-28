@@ -1,9 +1,5 @@
 import React from 'react';
 
-const homeComponent = () => {
-    return (
-        <p>Home!</p>
-    );
-};
+const homeComponent = () => <p>Home!</p>;
 
 export default homeComponent;

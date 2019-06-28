@@ -4,12 +4,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
     template: './public/index.html',
-    filename: './index.html',
+    filename: './index.html'
 });
 
 const cssPlugin = new MiniCssExtractPlugin({
     filename: '[name].[hash].css',
-    chunkFilename: '[name].css',
+    chunkFilename: '[name].css'
 });
 
 const getConfigBasedOnEnv = () => {
@@ -26,12 +26,12 @@ module.exports = {
     output: {
         path: path.join(__dirname, './../dist'),
         publicPath: '/',
-        filename: 'bundle.[hash].js',
+        filename: 'bundle.[hash].js'
     },
     devServer: {
         host: '000.000.00.00',
         historyApiFallback: true,
-        port: process.env.port || 6001,
+        port: process.env.port || 6001
     },
     module: {
         rules: [
@@ -42,19 +42,19 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                loader: 'html-loader',
+                loader: 'html-loader'
             },
             {
                 test: /\.s?css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-            },
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            }
         ]
     },
     plugins: [htmlPlugin, cssPlugin],
     resolve: {
         extensions: ['.js', '.css', '.scss'],
         alias: {
-            appConfig: getConfigBasedOnEnv(),
-        },
-    },
+            appConfig: getConfigBasedOnEnv()
+        }
+    }
 };
