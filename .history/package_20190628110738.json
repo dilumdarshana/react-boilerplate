@@ -15,11 +15,6 @@
         "lint": "eslint .",
         "precommit": "NODE_ENV=dev lint-staged"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
     "eslintConfig": {
         "extends": "react-app"
     },

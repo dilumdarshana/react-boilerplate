@@ -12,13 +12,7 @@
     "scripts": {
         "start": "webpack-dev-server --config ./webpack/webpack.dev.config.js",
         "build": "cross-env NODE_ENV=dev rimraf dist && webpack --colors --display-error-details --config ./webpack/webpack.dev.config.js",
-        "lint": "eslint .",
-        "precommit": "NODE_ENV=dev lint-staged"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
+        "lint": "eslint ."
     },
     "eslintConfig": {
         "extends": "react-app"
